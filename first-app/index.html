@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <style>
+        .info-box{
+            width: 300px;
+            height: 300px;
+            background-color: blueviolet;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<!--attribute-->
+<div id="app">
+    <!-- string interpolution -->
+    <h1>{{ cemil }}</h1>
+    <p>{{ felakettin }}</p>
+    <a
+        v-bind:target="link.target"
+        v-bind:href="link.href">
+        {{ link.title }}
+    </a>
+    <hr>
+    <div>
+        <div>Marka: {{ car.brand }}</div>
+        <div>Model: {{ car.model }}</div>
+        <div>Yıl: {{ car.year }}</div>
+        <div>Renk: {{ car.color }}</div>
+
+        <button v-on:click="markaDegistir">Marka Değiştir</button>
+    </div>
+    <hr>
+
+    <div v-html="htmlCode"></div>
+
+    <div> {{ car }}</div>
+
+    <div v-bind:data-id="dataId"> {{ devices }}</div>
+
+    <hr>
+    <button v-on:click="sayHello">Say Hello</button>
+
+    <hr>
+    <div class="info-box">
+        <!-- info-box isimli elementin üzerinde fare ile dolaştığımızda farenin koordinatlarını coords class'li element içinde gösteren uygulamayi yapiniz -->
+        <span class="coords">0,0</span>
+    </div>
+
+
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
