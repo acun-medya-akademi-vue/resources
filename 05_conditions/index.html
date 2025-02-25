@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Koşullar ve İterasyonlar</title>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <style>
+        .alert {
+            padding: 5px 10px;
+            border: 1px solid #666;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div v-if="false">
+        <h3>Attr ve Event Binding Kısayolu</h3>
+        <!-- Attr binding kısayolu v-bind:href => :href -->
+        <a :href="link">YT Kanali</a>
+        <br><br>
+        <!-- Event binding kısayolu v-on:click => @click -->
+        <button @click="updateDescription">Update</button>
+
+        <div>
+            {{ description }}
+        </div>
+        <hr>
+    </div>
+
+    <h3>Conditional Rendering</h3>
+    <!-- ÖDEV: hideContainer ve showContainer metotlarını daha sade hale getiriniz -->
+
+    <button @click="hideContainer">Gizle</button>
+    <button @click="showContainer">Göster</button>
+
+    <button @click="showToggle">Toggle</button>
+
+    <!-- ÖDEV: Gizle/Göster yerine showBox değerine göre ya Gizle ya da Göster yazacak cümleyi ekleyiniz -->
+    <button @click="showToggle">Gizle/Göster</button>
+    {{ showBox }}
+    <br><br>
+
+<!--    <div v-if="showBox" class="alert">-->
+<!--        TRUE olduğunda burasi görüntülenir..-->
+<!--        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cumque dolor exercitationem facilis iste mollitia-->
+<!--        repellat. Eius eligendi nulla quo totam voluptate. Consequuntur harum illum placeat similique sint? Neque, odit.-->
+<!--    </div>-->
+<!--    <div v-else>FALSE olduğunda burasi görüntülenir...</div>-->
+
+    <div v-show="showBox" class="alert">
+        TRUE olduğunda burasi görüntülenir..
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cumque dolor exercitationem facilis iste mollitia
+        repellat. Eius eligendi nulla quo totam voluptate. Consequuntur harum illum placeat similique sint? Neque, odit.
+    </div>
+    <div v-show="!showBox">FALSE olduğunda burasi görüntülenir...</div>
+
+
+    <h3>Age: {{ age }}</h3>
+
+    <div v-if="age < 5">Bebek</div>
+    <div v-if="age >= 5 && age <= 10">Çocuk</div>
+    <div v-if="age > 10 && age <= 30">Genç / Orta Yaşlı</div>
+    <div v-if="age > 30">Yaşlı</div>
+
+    <h3>Pozitif/Negatif {{ sayi }}</h3>
+    <div v-if="sayi > 0">Pozitif</div>
+    <div v-else-if="sayi < 0">Negatif</div>
+    <div v-else>Sayı sıfırdır.</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
