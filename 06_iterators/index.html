@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterator</title>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <style>
+        ul.list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul.list li {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul.list li:hover {
+            background-color: #ccc;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h3>Student List ({{ personalList.length }})</h3>
+
+    <!--    <ul>-->
+    <!--        <li v-for="(student, idx) in studentList">-->
+    <!--            {{ idx + 1 }} - {{ student }}-->
+    <!--        </li>-->
+    <!--    </ul>-->
+
+    <ul class="list">
+        <li
+            v-for="(personal, idx) in personalList"
+            @mousemove="setSelectedPerson"
+            @mouseenter="handleMouseEnter(personal)"
+            @click="selectedPerson = personal"
+        >
+            <span>{{ idx + 1 }} - {{ personal.name }} ({{ personal.age }})</span>
+            <span>{{ personal.email }}</span>
+        </li>
+    </ul>
+
+
+<!--    <div v-if="selectedPerson">-->
+<!--        <h3>Seçilen: {{ selectedPerson.name }}</h3>-->
+<!--        <ul>-->
+<!--            <li>name: {{selectedPerson.name}}</li>-->
+<!--            <li>email: {{selectedPerson.email}}</li>-->
+<!--            <li>age: {{selectedPerson.age}}</li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--    { name: "Gökhan", age: 37, email: "gokhan@gkandemir.com" },-->
+
+    <div v-if="selectedPerson">
+        <h3>Seçilen: {{ selectedPerson.name }}</h3>
+        <ul>
+            <li v-for="(value, key) in selectedPerson">
+                {{key}}: {{ value }}
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+<script src="app.js" type="application/javascript"></script>
+</body>
+</html>

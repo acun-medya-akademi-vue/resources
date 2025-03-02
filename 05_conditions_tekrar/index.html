@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Counter : {{ counter }}</h1>
+
+    <p v-if="counter > 0">Pozitif</p>
+    <p v-else-if="counter < 0">Negatif</p>
+    <p v-else>Sayı Sıfırdır</p>
+    <hr>
+    <p> {{ counter > 0 ? 'Pozitif' : counter < 0 ? 'Negatif' : 'Sayı Sıfırdır'}} </p>
+
+    <button v-on:click="inc">+</button>
+    <button :disabled="counter <= 0" @click="dec">-</button>
+</div>
+<script src="app.js" type="application/javascript"></script>
+</body>
+</html>

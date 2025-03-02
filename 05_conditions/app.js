@@ -23,6 +23,10 @@ const app = Vue.createApp({
     },
     hideContainer(){
       this.showBox = false
+    },
+
+    changeVisibility(show){
+      this.showBox = show
     }
   }
 })

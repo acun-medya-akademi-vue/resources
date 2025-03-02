@@ -30,14 +30,14 @@
     <h3>Conditional Rendering</h3>
     <!-- ÖDEV: hideContainer ve showContainer metotlarını daha sade hale getiriniz -->
 
-    <button @click="hideContainer">Gizle</button>
-    <button @click="showContainer">Göster</button>
+    <button @click="changeVisibility(false)">Gizle</button>
+    <button @click="changeVisibility(true)">Göster</button>
 
     <button @click="showToggle">Toggle</button>
 
     <!-- ÖDEV: Gizle/Göster yerine showBox değerine göre ya Gizle ya da Göster yazacak cümleyi ekleyiniz -->
-    <button @click="showToggle">Gizle/Göster</button>
-    {{ showBox }}
+    <button @click="showToggle"> {{ showBox ? 'Gizle': 'Göster' }} </button>
+    {{ showBox ? 'Şu anda container gözükmektedir.' : 'Şu anda kapalı.' }}
     <br><br>
 
 <!--    <div v-if="showBox" class="alert">-->
