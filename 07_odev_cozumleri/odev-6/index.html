@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Comment Like/Dislike App</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <header>Comment Like/Dislike App</header>
+    <div class="container">
+        <div class="comment--like--dislike--app">
+            <div v-for="i in comments" :key="i" class="card mb-10 comment--item">
+                <p>
+                    {{ i.comment }}
+                </p>
+                <div class="action--button--container text-right mt-10">
+                    <button @click="i.like++" class="btn-sm btn-success">Beğendim ({{i.like}})</button>
+                    <button @click="i.dislike++" class="btn-sm btn-danger">Beğenmedim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

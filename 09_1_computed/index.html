@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reactivity</title>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h3>Counter : {{ counter }}</h3>
+    <button @click="incCount">+</button>
+    <button @click="decCount">-</button>
+
+    <p>{{ counterDescription }}</p>
+
+    <hr>
+    <h3>Counter2 : {{ counter2 }}</h3>
+    <button @click="incCount2">+</button>
+    <button @click="decCount2">-</button>
+
+    <p>{{ counter2Description }}</p>
+
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
