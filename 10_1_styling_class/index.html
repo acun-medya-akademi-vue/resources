@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>(✿◡‿◡) | (￣o￣) . z Z</title>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+
+    <style>
+        #app {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            flex-direction: column;
+        }
+
+        .mad {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: #ccc;
+            border: 1px solid #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .bf {
+            font-size: 25px;
+        }
+
+        .bb {
+            border-width: 5px;
+            border-style: solid;
+        }
+
+        .left, .right{
+            width: 50px;
+            height: 50px;
+            background-color: #ddd;
+            border-top-left-radius: 40%;
+            border-top-right-radius: 40%;
+        }
+
+
+        .blueContainer {
+            background-color: blue;
+            border-color: darkblue;
+            color: #7ba3de;
+        }
+
+        .redContainer {
+            background-color: red;
+            border-color: crimson;
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="app">
+    <button @click="redLight = !redLight">Değiştir</button>
+    <div class="mad">
+        <div class="left" :class="leftLight"></div>
+        <div class="right" :class="rightLight"></div>
+    </div>
+    <hr>
+    <div class="mad">
+        <div
+                :class="{
+            redContainer: true,
+            bf: true
+        }"
+                class="box">{{title}}
+        </div>
+        <div
+                :class="{
+            blueContainer: true,
+            bb: true
+        }"
+                class="box">{{title}}
+        </div>
+    </div>
+    <hr>
+    <div class="mad">
+        <button @click="red = !red">Red {{ red }}</button>
+        <button @click="blue = !blue">Blue {{ blue }}</button>
+        <button @click="bigBorder = !bigBorder">Big Border {{ bigBorder }}</button>
+        <button @click="bigFont = !bigFont">Big Font {{ bigFont }}</button>
+<!--        <div-->
+<!--            :class="{-->
+<!--                redContainer: red,-->
+<!--                blueContainer: blue,-->
+<!--                bf: bigFont,-->
+<!--                bb: bigBorder-->
+<!--            }"-->
+<!--            class="box">asdasddads</div>-->
+
+        <div :class="boxClasses">asdasddads</div>
+    </div>
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>

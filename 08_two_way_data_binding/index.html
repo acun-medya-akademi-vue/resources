@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Two way data binding</title>
+    <title>ᓚᘏᗢ Two way data binding</title>
     <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
 </head>
 <body>
 <div id="app">
-
     <h3>{{fullName}}</h3>
     <hr>
     <input type="text" :value="fullName" @input="handleInput" />
     <input type="text" :value="fullName" @input="fullName = $event.target?.value" />
-
     <input type="text" v-model="fullName" />
 </div>
 
