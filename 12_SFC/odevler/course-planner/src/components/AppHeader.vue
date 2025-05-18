@@ -1,13 +1,14 @@
 <script>
 export default {
-  name: "AppHeader"
+  name: "AppHeader",
 }
 </script>
 
 <template>
-  <header>Kurs Planlaması</header>
+  <header>
+    <slot />
+  </header>
 </template>
 
 <style scoped>
-
 </style>
